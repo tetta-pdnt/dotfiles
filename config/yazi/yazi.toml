@@ -1,0 +1,13 @@
+[mgr]
+sort_dir_first = true
+show_hidden = true
+linemode = "mtime"
+show_symlink = true
+
+[opener]
+edit = [
+  { run = 'nvim "$@"', block = true },
+]
+reveal = [
+  { run = 'open -R "$@"', desc = "Reveal in Finder" },
+]

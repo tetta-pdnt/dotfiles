@@ -91,3 +91,55 @@ The darwin configuration disables numerous macOS default keyboard shortcuts (def
 ### Vivaldi Browser
 
 Vivaldi requires a custom override to handle XZ-compressed archives (home-manager lines 4-9).
+
+### Yazi Plugin Management
+
+Yazi plugins are fully managed by Nix using Home Manager's `xdg.configFile`. All plugins are defined in [home-manager/default.nix](home-manager/default.nix).
+
+#### Currently Installed Plugins
+
+- **starship.yazi** - Status line with shell prompt integration
+- **diff.yazi** - File diff viewer
+- **full-border.yazi** - Full border UI theme
+- **smart-enter.yazi** - Smart enter key behavior
+
+#### Adding a New Plugin
+
+1. **Get the plugin's rev and hash**:
+
+```bash
+# For plugins in separate repositories
+nix-shell -p nix-prefetch-github --run "nix-prefetch-github <owner> <repo> --rev <commit-hash>"
+
+# For yazi-rs/plugins repository
+nix-shell -p nix-prefetch-github --run "nix-prefetch-github yazi-rs plugins --rev <commit-hash>"
+```
+
+2. **Add to home-manager/default.nix**:
+
+For standalone plugin repositories:
+```nix
+"yazi/plugins/plugin-name.yazi".source = pkgs.fetchFromGitHub {
+  owner = "author";
+  repo = "plugin-name.yazi";
+  rev = "commit-hash";
+  hash = "sha256-...";
+};
+```
+
+For plugins in yazi-rs/plugins:
+```nix
+"yazi/plugins/plugin-name.yazi".source = pkgs.fetchFromGitHub {
+  owner = "yazi-rs";
+  repo = "plugins";
+  rev = "commit-hash";
+  hash = "sha256-...";
+} + "/plugin-name.yazi";
+```
+
+3. **Apply changes**:
+```bash
+nix run .#update
+```
+
+See [config/yazi/README.md](config/yazi/README.md) for detailed documentation.

@@ -1,0 +1,8 @@
+[mgr]
+
+prepend_keymap = [
+  { on = [ "g", "h" ], run = "cd ~", desc = "Go to home directory" },
+  { on = [ "g", "c" ], run = "cd ~/.config", desc = "Go to config directory" },
+  { on = [ "<C-d>" ], run = "plugin diff", desc = "Diff the selected with the hovered file" },
+  { on = [ "f" ], run = "plugin jump-to-char", desc = "Jump to char" },
+]
