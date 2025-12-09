@@ -13,6 +13,16 @@
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    brew-api = {
+      url = "github:BatteredBunny/brew-api";
+      flake = false;
+    };
+
+    brew-nix = {
+      url = "github:BatteredBunny/brew-nix";
+      inputs.brew-api.follows = "brew-api";
+    };
   };
 
   outputs = {
