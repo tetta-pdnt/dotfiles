@@ -233,7 +233,7 @@ hl	へい
 hm	ひゅん
 hn	はん
 ho	ほ
-hu	ひゅ
+hu	ふ
 hv	ひょう
 hw	ひゅー
 hy	はい

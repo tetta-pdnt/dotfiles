@@ -3,11 +3,11 @@
     "brew-api": {
       "flake": false,
       "locked": {
-        "lastModified": 1765016107,
-        "narHash": "sha256-L6q41Tvo9D+n7tqf0Q8A7bFTWmdcj0ETj1X/Kw4g7JA=",
+        "lastModified": 1765095531,
+        "narHash": "sha256-nJ1q022BRL9GHqN4M5OkM4Y3GYm6SK3u28sTRZLmEb4=",
         "owner": "BatteredBunny",
         "repo": "brew-api",
-        "rev": "c22545e265523222e8c072dbc985762be70e3459",
+        "rev": "647ded47a6a1d45415e3d84e6afbb04065896c15",
         "type": "github"
       },
       "original": {
@@ -86,11 +86,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764161084,
-        "narHash": "sha256-HN84sByg9FhJnojkGGDSrcjcbeioFWoNXfuyYfJ1kBE=",
+        "lastModified": 1765065051,
+        "narHash": "sha256-b7W9WsvyMOkUScNxbzS45KEJp0iiqRPyJ1I3JBE+oEE=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "e95de00a471d07435e0527ff4db092c84998698e",
+        "rev": "7e22bf538aa3e0937effcb1cee73d5f1bcc26f79",
         "type": "github"
       },
       "original": {
@@ -111,6 +111,22 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1735563628,
+        "narHash": "sha256-OnSAY7XDSx7CtDoqNh8jwVwh4xNL/2HaJxGjryLWzX8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b134951a4c9f3c995fd7be05f3243f8ecd65d798",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -137,7 +153,8 @@
         "brew-nix": "brew-nix",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin_2",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "nixpkgs-stable": "nixpkgs-stable"
       }
     }
   },

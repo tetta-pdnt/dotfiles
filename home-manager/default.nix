@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }:
+{ inputs, lib, config, pkgs, system, ... }:
 let
 
   vivaldi = pkgs.brewCasks.vivaldi.overrideAttrs (o: {
@@ -22,6 +22,7 @@ in {
       curl
       neovim
       gh
+      ghq
       lazygit
       fzf
       bat
@@ -31,6 +32,11 @@ in {
       zoxide
       delta
       as-tree
+      jq
+      starship
+      yazi
+      mise
+      ni
     ] ++ (with pkgs.brewCasks; [
       ghostty
       raycast
@@ -39,12 +45,21 @@ in {
       visual-studio-code
       obsidian
       jetbrains-toolbox
-      cmd-eikana
       bitwarden
-    ]) ++ [ vivaldi ];
+    ]) ++ [
+      vivaldi
+    ];
     username = "tetta";
     homeDirectory = "/Users/tetta";
     stateVersion = "25.11";
+
+    file = {
+      ".zshrc".source = ../.zshrc;
+      ".config/karabiner/karabiner.json" = {
+        source = ../.config/karabiner/karabiner.json;
+        force = true;
+      };
+    };
   };
 
   programs.home-manager.enable = true;

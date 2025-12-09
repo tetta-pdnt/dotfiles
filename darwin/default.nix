@@ -1,4 +1,4 @@
-{ inputs, lib, pkgs, ... }:
+{ inputs, lib, pkgs, system, ... }:
 let
 
   disabledShortcuts = [
@@ -63,11 +63,10 @@ in {
         "com.apple.desktopservices" = {
           DSDontWriteNetworkStores = true;
         };
-
-        "Apple Global Domain" = {
+        ".GlobalPreferences" = {
           "com.apple.mouse.scaling" = 7.0;
           "com.apple.trackpad.scaling" = 3.0;
-          "com.apple.swipescrolldirection" = false;
+          "com.apple.swipescrolldirection" = 0;
         };
       };
       
@@ -102,7 +101,10 @@ in {
       upgrade = true;
       cleanup = "zap";
     };
-    casks = [ "google-japanese-ime" ];
+    casks = [
+      "google-japanese-ime"
+      "karabiner-elements"
+    ];
   };
 
   fonts = {
