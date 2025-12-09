@@ -11,7 +11,9 @@
     stateVersion = "25.11";
   };
 
-  home.file.".zshenv".source = ../config/zsh/.zshenv;
+  home.file = {
+    ".zshenv".source = ../config/zsh/.zshenv;
+  };
 
   xdg.configFile = {
     "karabiner/karabiner.json".source = ../config/karabiner.json;
@@ -22,6 +24,7 @@
     "zsh-abbr/user-abbreviations".source = ../config/zsh-abbr;
     "ghostty/config".source = ../config/ghostty;
     "lazygit/config.yml".source = ../config/lazygit.yaml;
+    "git".source = ../config/git;
   };
 
   programs.home-manager.enable = true;
