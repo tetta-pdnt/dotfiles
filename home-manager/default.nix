@@ -14,14 +14,14 @@
   home.file.".zshenv".source = ../config/zsh/.zshenv;
 
   xdg.configFile = {
-    "karabiner/karabiner.json" = {
-      source = ../config/karabiner.json;
-      force = true;
-    };
+    "karabiner/karabiner.json".source = ../config/karabiner.json;
     "sheldon/plugins.toml".source = ../config/sheldon.toml;
+    "starship.toml".source = ../config/starship.toml;
+    "eza/theme.yml".source = ../config/eza.yaml;
     "zsh".source = ../config/zsh;
     "zsh-abbr/user-abbreviations".source = ../config/zsh-abbr;
     "ghostty/config".source = ../config/ghostty;
+    "lazygit/config.yml".source = ../config/lazygit.yaml;
   };
 
   programs.home-manager.enable = true;

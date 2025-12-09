@@ -109,6 +109,7 @@ in {
   fonts = {
     packages = with pkgs; [
       hackgen-nf-font
+      source-han-code-jp
     ];
   };
 }

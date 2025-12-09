@@ -6,7 +6,7 @@ export FZF_DEFAULT_OPTS="
   --height=60%
   --select-1
   --exit-0
-  --color='hl:-1:reverse,hl+:-1:reverse'
+  --color='hl:-1:reverse,hl+:-1:reverse,info:#545c7e'
 "
 
 export FZF_CTRL_T_COMMAND="

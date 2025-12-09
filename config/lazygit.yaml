@@ -1,0 +1,82 @@
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never --side-by-side --line-numbers --hyperlinks --hyperlinks-file-link-format "vscode://file/{path}:{line}"
+  branchLogCmd: "git log --graph --color=always --date=format:'%y-%m-%d %H:%M' --pretty=format:'%C(auto)%h %C(blue)%ad %C(cyan)%an %C(auto)%d %C(reset)%n%s%n' {{branchName}} --"
+  allBranchesLogCmds:
+    - "git log --graph --all --color=always --date=format:'%y-%m-%d %H:%M' --pretty=format:'%C(auto)%h%d %C(blue)%ad%C(reset)%n%s'"
+
+gui:
+  language: ja
+  nerdFontsVersion: "3"
+  theme:
+    activeBorderColor:
+      - "#ff966c"
+      - "bold"
+    inactiveBorderColor:
+      - "#589ed7"
+    searchingActiveBorderColor:
+      - "#ff966c"
+      - "bold"
+    optionsTextColor:
+      - "#82aaff"
+    selectedLineBgColor:
+      - "#2d3f76"
+    cherryPickedCommitFgColor:
+      - "#82aaff"
+    cherryPickedCommitBgColor:
+      - "#c099ff"
+    markedBaseCommitFgColor:
+      - "#82aaff"
+    markedBaseCommitBgColor:
+      - "#ffc777"
+    unstagedChangesColor:
+      - "#c53b53"
+    defaultFgColor:
+      - "#c8d3f5"
+
+os:
+  editPreset: nvim
+
+customCommands:
+  - key: 'c'
+    context: 'files'
+    description: 'Commit with prefix'
+    prompts:
+      - type: 'menu'
+        title: 'Select commit prefix'
+        key: 'Prefix'
+        options:
+          - description: '新機能'
+            value: 'feat'
+          - description: 'バグ修正'
+            value: 'fix'
+          - description: 'ドキュメント'
+            value: 'docs'
+          - description: 'コードスタイル'
+            value: 'style'
+          - description: 'リファクタリング'
+            value: 'refactor'
+          - description: 'パフォーマンス改善'
+            value: 'perf'
+          - description: 'テスト'
+            value: 'test'
+          - description: 'ビルドシステム'
+            value: 'build'
+          - description: 'CI/CD'
+            value: 'ci'
+          - description: 'その他の変更'
+            value: 'chore'
+          - description: '変更の取り消し'
+            value: 'revert'
+          - description: '作業中'
+            value: 'wip'
+      - type: 'input'
+        title: 'Enter commit message'
+        key: 'Message'
+        initialValue: ''
+      - type: 'confirm'
+        title: 'Confirm commit'
+        body: 'Commit with message: "{{.Form.Prefix}}: {{.Form.Message}}"?'
+    command: 'git commit -m "{{.Form.Prefix}}: {{.Form.Message}}"'
+    loadingText: 'Committing...'
