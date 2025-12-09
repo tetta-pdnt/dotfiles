@@ -63,11 +63,6 @@ in {
         "com.apple.desktopservices" = {
           DSDontWriteNetworkStores = true;
         };
-        ".GlobalPreferences" = {
-          "com.apple.mouse.scaling" = 7.0;
-          "com.apple.trackpad.scaling" = 3.0;
-          "com.apple.swipescrolldirection" = 0;
-        };
       };
       
       WindowManager = {
@@ -87,7 +82,11 @@ in {
         KeyRepeat = 2;
         InitialKeyRepeat = 15;
         AppleInterfaceStyle = "Dark";
+        "com.apple.swipescrolldirection" = false;
+        "com.apple.trackpad.scaling" = 3.0;
       };
+
+      ".GlobalPreferences"."com.apple.mouse.scaling" = 7.0;
     };
     
     primaryUser = "tetta";

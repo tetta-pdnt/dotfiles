@@ -1,0 +1,21 @@
+font-family = "HackGen Console NF"
+font-size = 16
+font-feature = -dlig
+
+theme = TokyoNight Moon
+background-opacity = 0.8
+background-blur-radius = 20
+macos-titlebar-style = tabs
+macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = left
+
+window-padding-x = 12
+window-padding-y = 3
+window-padding-balance = true
+window-padding-color = extend
+window-theme = ghostty
+
+quick-terminal-position = top
+quick-terminal-size = 50%,50%
+quick-terminal-animation-duration = 0
+keybind = "global:ctrl+i=toggle_quick_terminal"

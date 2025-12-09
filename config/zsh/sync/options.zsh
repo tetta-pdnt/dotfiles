@@ -1,0 +1,26 @@
+HISTFILE=$ZDOTDIR/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+setopt extended_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_no_store
+setopt hist_reduce_blanks
+setopt hist_verify
+setopt inc_append_history
+setopt share_history
+setopt auto_cd
+setopt extended_glob
+setopt no_nomatch
+setopt correct
+setopt interactive_comments
+setopt print_eight_bit
+setopt prompt_subst
+setopt no_beep
+setopt no_flow_control
+setopt auto_list
+setopt auto_menu
+setopt complete_in_word
+setopt list_packed
+setopt list_types
+setopt magic_equal_subst
