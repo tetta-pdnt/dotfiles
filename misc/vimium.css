@@ -1,0 +1,119 @@
+div.vimiumHintMarker,
+div.internal-vimium-hint-marker {
+    font-family: "Tazugane Gothic StdN" !important;
+    padding: 3px 4px !important;
+    background: rgba(33, 33, 33, 0.85) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    border: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24) !important;
+}
+
+div.vimiumHintMarker span,
+div.internal-vimium-hint-marker span {
+    color: #fff !important;
+    text-shadow: none !important;
+}
+
+div.vimiumHintMarker > span.matchingCharacter,
+div.internal-vimium-hint-marker > span.matchingCharacter {
+    opacity: .4 !important;
+}
+
+div.vimiumHintMarker > span.matchingCharacter ~ span,
+div.internal-vimium-hint-marker > span.matchingCharacter ~ span {
+    color: #43b1e9 !important;
+}
+
+#vomnibar {
+    background: rgba(33, 33, 33, 0.8);
+    backdrop-filter: blur(2px);
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24)
+}
+
+#vomnibar * {
+    font-family: "Tazugane Gothic StdN" !important
+}
+
+#vomnibar .vomnibarSearchArea,
+#vomnibar input {
+    color: #fff;
+    background: transparent;
+    border: none
+}
+
+#vomnibar .vomnibarSearchArea {
+    padding: 10px 30px
+}
+
+#vomnibar input {
+    padding: 0
+}
+
+#vomnibar ul {
+    margin: 0 0 1em;
+    padding: 0;
+    background: transparent;
+    border-top: 1px solid #313131
+}
+
+#vomnibar li {
+    padding: 10px;
+    border-bottom: 1px solid #313131
+}
+
+#vomnibar li .vomnibarTopHalf,
+#vomnibar li .vomnibarBottomHalf {
+    padding: 3px 0
+}
+
+#vomnibar li .vomnibarSource {
+    color: #aaa
+}
+
+#vomnibar li em,
+#vomnibar li .vomnibarTitle {
+    color: #aaa
+}
+
+#vomnibar li .vomnibarUrl {
+    color: #777
+}
+
+#vomnibar li .vomnibarMatch {
+    color: #43b1e9;
+    font-weight: normal
+}
+
+#vomnibar li .vomnibarTitle .vomnibarMatch {
+    color: #43b1e9
+}
+
+#vomnibar li.vomnibarSelected {
+    background-color: #313131
+}
+
+div.vimiumHUD {
+    background: #212121;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24)
+}
+
+div.vimiumHUD * {
+    font-family: "Tazugane Gothic StdN" !important
+}
+
+div.vimiumHUD span#hud-find-input,
+div.vimiumHUD .vimiumHUDSearchAreaInner {
+    color: #fff
+}
+
+div.vimiumHUD .hud-find {
+    background-color: transparent;
+    border: none
+}
+
+div.vimiumHUD .vimiumHUDSearchArea {
+    background-color: transparent
+}
