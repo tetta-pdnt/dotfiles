@@ -5,6 +5,17 @@
     packages = with pkgs; [
       git
       curl
+      neovim
+      gh
+      lazygit
+      fzf
+      bat
+      eza
+      ripgrep
+      fd
+      zoxide
+      delta
+      as-tree
     ];
 
     username = "tetta";
