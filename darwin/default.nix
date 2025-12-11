@@ -86,7 +86,7 @@ in {
         "com.apple.trackpad.scaling" = 3.0;
       };
 
-      ".GlobalPreferences"."com.apple.mouse.scaling" = 7.0;
+      ".GlobalPreferences"."com.apple.mouse.scaling" = 6.0;
     };
     
     primaryUser = "tetta";

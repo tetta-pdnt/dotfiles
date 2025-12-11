@@ -67,9 +67,16 @@ nix flake update
 
 ### Configuration Files
 
-User dotfiles are symlinked from the repository root:
-- `.zshrc` → `~/.zshrc`
-- `.config/karabiner/karabiner.json` → `~/.config/karabiner/karabiner.json` (with `force = true` to overwrite)
+User dotfiles are symlinked from the repository root to keep the home directory clean:
+- `.zshenv` → `~/.zshenv` (defines `ZDOTDIR` to point to `~/.config/zsh`)
+- All other dotfiles are placed in `~/.config/` via `xdg.configFile` in home-manager
+
+Key XDG configuration files:
+- `karabiner/karabiner.json` → `~/.config/karabiner/karabiner.json`
+- `nb/.nbrc` → `~/.config/nb/.nbrc` (nb configuration, referenced by `NBRC_PATH` in config/zsh/sync/sync.zsh)
+- `zsh` → `~/.config/zsh` (entire zsh configuration directory)
+- `git` → `~/.config/git`
+- `yazi` → `~/.config/yazi`
 
 ## Important Notes
 
@@ -143,3 +150,26 @@ nix run .#update
 ```
 
 See [config/yazi/README.md](config/yazi/README.md) for detailed documentation.
+
+### nb Configuration
+
+The `nb` note-taking tool is configured to keep the home directory clean:
+
+1. **Configuration file**: `config/nbrc.sh` is symlinked to `~/.config/nb/.nbrc`
+2. **Environment variable**: `NBRC_PATH` is set in [config/zsh/sync/sync.zsh](config/zsh/sync/sync.zsh) to point to `~/.config/nb/.nbrc`
+3. **Notes directory**: By default, nb uses `~/.nb` for notes. This can be changed by adding `export NB_DIR=/path/to/notes` in `config/nbrc.sh`
+
+To modify nb settings:
+- Edit `config/nbrc.sh` to add environment variables
+- Or use `nb set <setting> <value>` which will write to the config file
+- Apply changes with `nix run .#update`
+
+### macOS System Settings
+
+System-level macOS preferences are managed in [darwin/default.nix](darwin/default.nix):
+
+- **Window restoration**: `NSQuitAlwaysKeepsWindows = false` prevents reopening windows from previous session on startup
+- **Keyboard repeat**: Fast key repeat (`KeyRepeat = 2`, `InitialKeyRepeat = 15`)
+- **Mouse/trackpad**: Custom scaling values for precise control
+- **Dark mode**: Always enabled (`AppleInterfaceStyle = "Dark"`)
+- **Natural scrolling**: Disabled for traditional scroll direction

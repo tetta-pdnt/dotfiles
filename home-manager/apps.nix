@@ -36,6 +36,7 @@ in {
     mise
     ni
     sheldon
+    nb
   ] ++ (with pkgs.brewCasks; [
     ghostty
     raycast

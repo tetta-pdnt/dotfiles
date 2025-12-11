@@ -22,9 +22,10 @@
     "eza/theme.yml".source = ../config/eza.yaml;
     "zsh".source = ../config/zsh;
     "zsh-abbr/user-abbreviations".source = ../config/zsh-abbr;
-    "ghostty/config".source = ../config/ghostty;
+    "ghostty/config".source = ../config/ghostty.txt;
     "lazygit/config.yml".source = ../config/lazygit.yaml;
     "git".source = ../config/git;
+    "nb/.nbrc".source = ../config/nbrc.sh;
 
     # Yazi configuration files
     "yazi/yazi.toml".source = ../config/yazi/yazi.toml;
