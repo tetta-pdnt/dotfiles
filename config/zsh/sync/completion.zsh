@@ -1,8 +1,11 @@
 autoload -Uz compinit
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+12) ]]; then
-  compinit
+
+ZSH_COMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
+mkdir -p "${ZSH_COMPDUMP:h}"
+if [[ -n ${ZSH_COMPDUMP}(#qN.mh+12) ]]; then
+  compinit -d "$ZSH_COMPDUMP"
 else
-  compinit -C
+  compinit -C -d "$ZSH_COMPDUMP"
 fi
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|=*' 'l:|=* r:|=*'

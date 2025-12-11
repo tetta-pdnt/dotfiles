@@ -26,6 +26,7 @@
     "lazygit/config.yml".source = ../config/lazygit.yaml;
     "git".source = ../config/git;
     "nb/.nbrc".source = ../config/nbrc.sh;
+    "nvim".source = ../config/nvim;
 
     # Yazi configuration files
     "yazi/yazi.toml".source = ../config/yazi/yazi.toml;

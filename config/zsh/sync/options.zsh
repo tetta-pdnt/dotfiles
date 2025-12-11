@@ -1,4 +1,4 @@
-HISTFILE=$ZDOTDIR/.zsh_history
+HISTFILE=$HOME/.local/state/zsh/history
 HISTSIZE=1000000
 SAVEHIST=1000000
 setopt extended_history
