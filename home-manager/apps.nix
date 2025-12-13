@@ -38,10 +38,10 @@ in {
     sheldon
     nb
     bagels
+    claude-code
   ] ++ (with pkgs.brewCasks; [
     ghostty
     raycast
-    claude-code
     notunes
     obsidian
     jetbrains-toolbox

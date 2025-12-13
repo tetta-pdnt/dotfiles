@@ -16,6 +16,8 @@
 
   home.file = {
     ".zshenv".source = ../config/zsh/.zshenv;
+    ".ssh/config".source = ../config/ssh/config;
+    ".ssh/id_ed25519.pub".source = ../config/ssh/id_ed25519.pub;
   };
 
   xdg.configFile = {
