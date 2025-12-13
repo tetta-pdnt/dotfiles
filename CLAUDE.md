@@ -164,6 +164,22 @@ To modify nb settings:
 - Or use `nb set <setting> <value>` which will write to the config file
 - Apply changes with `nix run .#update`
 
+### VSCode Configuration
+
+VSCode is managed declaratively through Home Manager's `programs.vscode` module in [home-manager/vscode.nix](home-manager/vscode.nix):
+
+- **Installation**: VSCode is installed via nixpkgs (not brew-nix)
+- **Settings**: User settings are defined in `userSettings` (editor, workbench, terminal, git, etc.)
+- **Extensions**: Extensions are installed from `pkgs.vscode-extensions` or `vscode-marketplace`
+- **Keybindings**: Custom keybindings defined in `keybindings` list
+
+To modify VSCode configuration:
+- Edit [home-manager/vscode.nix](home-manager/vscode.nix) to change settings or add extensions
+- Apply changes with `nix run .#update`
+- Settings will be written to `~/Library/Application Support/Code/User/settings.json`
+
+Note: Manual changes to VSCode settings will be overwritten on the next home-manager rebuild. Always modify [vscode.nix](home-manager/vscode.nix) instead.
+
 ### macOS System Settings
 
 System-level macOS preferences are managed in [darwin/default.nix](darwin/default.nix):

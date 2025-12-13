@@ -37,12 +37,12 @@ in {
     ni
     sheldon
     nb
+    bagels
   ] ++ (with pkgs.brewCasks; [
     ghostty
     raycast
     claude-code
     notunes
-    visual-studio-code
     obsidian
     jetbrains-toolbox
     bitwarden

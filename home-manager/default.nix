@@ -3,7 +3,10 @@
 {
   imports = [
     ./apps.nix
+    ./vscode.nix
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   home = {
     username = "tetta";
