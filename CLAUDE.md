@@ -77,6 +77,21 @@ Key XDG configuration files:
 - `zsh` → `~/.config/zsh` (entire zsh configuration directory)
 - `git` → `~/.config/git`
 - `yazi` → `~/.config/yazi`
+- `vim/vimrc` → `~/.config/vim/vimrc` (Vim configuration, loaded via `VIMINIT` environment variable)
+
+### File Organization Rules in config/
+
+When adding new configuration files to the `config/` directory:
+
+- **Single file**: Place directly in `config/` directory
+  - Examples: `config/vimrc`, `config/starship.toml`, `config/nbrc.sh`
+  - In home-manager: `"vim/vimrc".source = ../config/vimrc;`
+
+- **Multiple files**: Create a subdirectory
+  - Examples: `config/nvim/`, `config/git/`, `config/yazi/`, `config/zsh/`
+  - In home-manager: `"nvim".source = ../config/nvim;`
+
+This keeps the `config/` directory clean and makes it easy to see at a glance which applications have simple vs. complex configurations.
 
 ## Important Notes
 

@@ -1,0 +1,50 @@
+" XDG環境変数のフォールバック
+if empty($XDG_CACHE_HOME)  | let $XDG_CACHE_HOME  = $HOME."/.cache"       | endif
+if empty($XDG_CONFIG_HOME) | let $XDG_CONFIG_HOME = $HOME."/.config"      | endif
+if empty($XDG_DATA_HOME)   | let $XDG_DATA_HOME   = $HOME."/.local/share" | endif
+if empty($XDG_STATE_HOME)  | let $XDG_STATE_HOME  = $HOME."/.local/state" | endif
+
+" runtimepathをXDG準拠に設定
+set runtimepath^=$XDG_CONFIG_HOME/vim
+set runtimepath+=$XDG_DATA_HOME/vim
+set runtimepath+=$XDG_CONFIG_HOME/vim/after
+
+" packpathを設定
+set packpath^=$XDG_DATA_HOME/vim,$XDG_CONFIG_HOME/vim
+set packpath+=$XDG_CONFIG_HOME/vim/after,$XDG_DATA_HOME/vim/after
+
+" viminfoファイルの保存場所
+if !has('nvim')
+  set viminfofile=$XDG_STATE_HOME/vim/viminfo
+endif
+
+" ディレクトリの自動作成関数
+function! s:EnsureDir(dir)
+  if !isdirectory(a:dir)
+    call mkdir(a:dir, 'p', 0700)
+  endif
+endfunction
+
+" キャッシュディレクトリ
+let g:vim_cache_dir = $XDG_CACHE_HOME . '/vim'
+call s:EnsureDir(g:vim_cache_dir)
+call s:EnsureDir($XDG_STATE_HOME . '/vim')
+
+" バックアップファイル
+set backup
+let &backupdir = g:vim_cache_dir . '/backup//'
+call s:EnsureDir(&backupdir)
+
+" スワップファイル
+let &directory = g:vim_cache_dir . '/swap//'
+call s:EnsureDir(&directory)
+
+" undoファイル
+if has('persistent_undo')
+  set undofile
+  let &undodir = g:vim_cache_dir . '/undo//'
+  call s:EnsureDir(&undodir)
+endif
+
+" netrw（ファイルブラウザ）の履歴
+let g:netrw_home = g:vim_cache_dir

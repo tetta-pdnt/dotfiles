@@ -32,6 +32,7 @@
     "git".source = ../config/git;
     "nb/.nbrc".source = ../config/nbrc.sh;
     "nvim".source = ../config/nvim;
+    "vim/vimrc".source = ../config/vimrc;
 
     # Yazi configuration files
     "yazi/yazi.toml".source = ../config/yazi/yazi.toml;
