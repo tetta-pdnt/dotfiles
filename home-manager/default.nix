@@ -33,6 +33,8 @@
     "nb/.nbrc".source = ../config/nbrc.sh;
     "nvim".source = ../config/nvim;
     "vim/vimrc".source = ../config/vimrc;
+    "yt-dlp/config".source = ../config/yt-dlp;
+    "mise/config.toml".source = ../config/mise.toml;
 
     # Yazi configuration files
     "yazi/yazi.toml".source = ../config/yazi/yazi.toml;

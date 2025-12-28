@@ -7,4 +7,3 @@ export EZA_CONFIG_DIR="$XDG_CONFIG_HOME/eza"
 export NBRC_PATH="$HOME/.config/nb/.nbrc"
 export NIX_USER_CONF_FILES="$XDG_CONFIG_HOME/nix/nix.conf:${XDG_CONFIG_HOME}/nix/local.conf"
 export LESSHISTFILE="$XDG_STATE_HOME/less/history"
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'

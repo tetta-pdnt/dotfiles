@@ -93,6 +93,9 @@ in
       # Window settings
       "window.restoreWindows" = "none";
       "window.zoomLevel" = 0;
+
+      # Claude Code settings
+      "claudeCode.useTerminal" = true;
       };
 
       keybindings = [

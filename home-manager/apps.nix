@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, system, ... }:
 
 let
 
@@ -38,7 +38,9 @@ in {
     sheldon
     nb
     bagels
-    claude-code
+    himalaya
+    unar
+    yt-dlp
   ] ++ (with pkgs.brewCasks; [
     ghostty
     raycast
@@ -46,7 +48,9 @@ in {
     obsidian
     jetbrains-toolbox
     bitwarden
+    monitorcontrol
   ]) ++ [
     vivaldi
+    inputs.llm-agents.packages.${system}.claude-code
   ];
 }

@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "tetta-pdnt's dotfiles";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -24,6 +24,10 @@
       url = "github:BatteredBunny/brew-nix";
       inputs.brew-api.follows = "brew-api";
     };
+
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+    };
   };
 
   outputs = {
@@ -31,7 +35,7 @@
     nixpkgs,
     home-manager,
     nix-darwin,
-    ... 
+    ...
   } @ inputs: let
     system = "aarch64-darwin";
     pkgs = import nixpkgs { inherit system; };
@@ -71,4 +75,3 @@
     };
   };
 }
-
