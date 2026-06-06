@@ -14,7 +14,15 @@ let
 in {
 
   nix.enable = false;
-  
+
+  environment.systemPath = [
+    "/opt/homebrew/bin"
+  ];
+
+  environment.systemPackages = with pkgs; [
+    ffmpeg
+  ];
+
   system = {
     activationScripts = {
       preActivation.text = ''
@@ -26,14 +34,14 @@ in {
           echo "Rosetta 2 is already installed."
         fi
       '';
-      
+
       disableKeyboardShortcuts.text = ''
         echo "Disabling macOS keyboard shortcuts..."
         ${disableShortcutCommands}
         echo "Keyboard shortcuts disabled. Changes will take effect after logout/login."
       '';
     };
-    
+
     defaults = {
       finder = {
         AppleShowAllFiles = true;
@@ -45,7 +53,7 @@ in {
         CreateDesktop = false;
         _FXShowPosixPathInTitle = true;
       };
-      
+
       dock = {
         autohide = true;
         show-recents = false;
@@ -58,17 +66,17 @@ in {
         autohide-delay = 0.0;
         autohide-time-modifier = 0.5;
       };
-      
+
       CustomUserPreferences = {
         "com.apple.desktopservices" = {
           DSDontWriteNetworkStores = true;
         };
       };
-      
+
       WindowManager = {
         StandardHideDesktopIcons = true;
       };
-      
+
       menuExtraClock = {
         Show24Hour = true;
         ShowDate = 0;
@@ -76,7 +84,7 @@ in {
         ShowDayOfWeek = true;
         ShowSeconds = true;
       };
-      
+
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
         KeyRepeat = 2;
@@ -88,11 +96,11 @@ in {
 
       ".GlobalPreferences"."com.apple.mouse.scaling" = 6.0;
     };
-    
+
     primaryUser = "tetta";
     stateVersion = 6;
   };
-  
+
   homebrew = {
     enable = true;
     onActivation = {
@@ -100,9 +108,16 @@ in {
       upgrade = true;
       cleanup = "zap";
     };
+    brews = [
+      "yt-dlp"
+    ];
     casks = [
       "google-japanese-ime"
       "karabiner-elements"
+      "vivaldi"
+      "rekordbox"
+      "steam"
+      "codex-app"
     ];
   };
 

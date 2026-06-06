@@ -2,13 +2,6 @@
 
 let
 
-  vivaldi = pkgs.brewCasks.vivaldi.overrideAttrs (o: {
-    nativeBuildInputs = o.nativeBuildInputs ++ [ pkgs.xz ];
-    unpackPhase = ''
-      tar -xJf $src
-    '';
-  });
-
 in {
 
   nixpkgs.overlays = [
@@ -38,9 +31,10 @@ in {
     sheldon
     nb
     bagels
+    uv
     himalaya
     unar
-    yt-dlp
+    zed-editor
   ] ++ (with pkgs.brewCasks; [
     ghostty
     raycast
@@ -49,8 +43,11 @@ in {
     jetbrains-toolbox
     bitwarden
     monitorcontrol
-  ]) ++ [
-    vivaldi
-    inputs.llm-agents.packages.${system}.claude-code
-  ];
+    android-studio
+    alt-tab
+    epic-games
+  ]) ++ (with inputs.llm-agents.packages.${system}; [
+    claude-code
+    amp
+  ]);
 }
