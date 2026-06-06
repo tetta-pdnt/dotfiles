@@ -21,7 +21,10 @@
   };
 
   xdg.configFile = {
-    "karabiner/karabiner.json".source = ../config/karabiner.json;
+    "karabiner/karabiner.json" = {
+      source = ../config/karabiner.json;
+      force = true;
+    };
     "sheldon/plugins.toml".source = ../config/sheldon.toml;
     "starship.toml".source = ../config/starship.toml;
     "eza/theme.yml".source = ../config/eza.yaml;

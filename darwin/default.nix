@@ -67,6 +67,8 @@ in {
         autohide-time-modifier = 0.5;
       };
 
+      spaces.spans-displays = true;
+
       CustomUserPreferences = {
         "com.apple.desktopservices" = {
           DSDontWriteNetworkStores = true;
@@ -101,12 +103,18 @@ in {
     stateVersion = 6;
   };
 
+  services.aerospace = {
+    enable = true;
+    settings = builtins.fromTOML (builtins.readFile ../config/aerospace.toml);
+  };
+
   homebrew = {
     enable = true;
     onActivation = {
       autoUpdate = true;
       upgrade = true;
       cleanup = "zap";
+      extraFlags = [ "--force" ];
     };
     brews = [
       "yt-dlp"

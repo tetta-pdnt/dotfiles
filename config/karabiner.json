@@ -86,6 +86,23 @@
                   }
                 },
                 "to": []
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "mandatory": [
+                      "command",
+                      "control"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "vk_none"
+                  }
+                ]
               }
             ]
           }

@@ -18,4 +18,4 @@ window-theme = ghostty
 quick-terminal-position = top
 quick-terminal-size = 50%,50%
 quick-terminal-animation-duration = 0
-keybind = "global:ctrl+i=toggle_quick_terminal"
+keybind = "global:ctrl+cmd+i=toggle_quick_terminal"
