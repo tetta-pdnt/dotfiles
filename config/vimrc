@@ -50,3 +50,6 @@ endif
 let g:netrw_home = g:vim_cache_dir
 
 set cursorcolumn
+
+" Vim/Neovim共通のキーマッピング
+execute 'source ' . fnameescape($XDG_CONFIG_HOME . '/vim/mappings.vim')
